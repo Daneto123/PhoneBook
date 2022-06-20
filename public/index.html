@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone book</title>
+    <link rel="stylesheet" href="./styles/style.css" > 
+
+</head>
+<body>
+
+<div class="container">
+
+
+    <div class="nav">
+        <button> <img src="./images/me.png"></button>
+        
+        <div class="buttons">
+            <button id="homeBtn" onclick="homeBtn()">
+                <img id="gifHomeBtn" style="width: 30px; height: 30px;" src="./images/home.png" > Всички
+            </button>
+            <button id="addBtn" onclick="register()">
+                <a href="http://localhost:3000/newContact"></a>
+                <img style="width: 30px; height: 30px;" src="./images/add.png" > Добави
+            </button>
+            <button id="favoriteBtn" onclick="favorite()">
+                <a href="http://localhost:3000/favorites"></a>
+                <img style="width: 30px; height: 30px;" src="./images/favorites.png" > Любими
+            </button>
+        </div>
+
+        <div class="search">
+            <input id="searchItem" placeholder="Търси">  
+            <button onclick="searchNumber()" > <img src="./images/search.png" > </button>    
+        </div>
+            
+    </div>
+
+    <!-- визуализиране на всички контакти -->
+    <div class="menu">
+        <ul>    
+        </ul>
+    </div>
+
+    <div class="favorite">
+        <ul id="favoritelist">    
+        </ul>
+    </div>
+
+
+    <div class="main">
+
+        <div class="personalInfo">
+
+            <img id="profileImg" src="#">
+
+            <p id="frstName"> </p>
+            <div class="eml">
+                <img src="./images/icons8-mail-50.png">
+                <p id="eml"> </p>
+            </div>
+            <div class="addr">
+                <img src="./images/home.png" style="width: 30px; height: 30px;">
+                <p id="addrst"> </p>
+            </div>
+
+            <table id="PhoneNumbers"></table>
+
+            <div id="buttonsForAnotherPhones">
+                <button id="addP"><img id="imagebtn" src="./images/add.png">Добавяне на номер</button>
+                <button id="remP"><img id="imagebtn" src="./images/icons8-minus-50.png">Премахване на номер</button>
+                <button id="remPer"><img id="imagebtn" src="./images/icons8-xbox-x-50.png">Премахване на контакт</button>
+            </div>
+
+        </div>
+
+        <div class="addNewNumber">
+            <label>Име</label>
+            <input type="text" id="typeNumb" >
+            <label>Телефонен номер</label>
+            <input type="text" id="phoneNumbAdd">
+            <button id="addAnotherNumber"> Добави </button>
+        </div>
+
+        <div class="removeNumber">
+            <label>Телефонен номер</label>
+            <input type="text" id="phoneNumbRem">
+            <button id="removeAnotherNumber"> Премахни </button>
+        </div>
+
+        <div class="backBtn">
+            <button onclick="hideInfo()"><img src="./images/back.png"></button>
+        </div>
+
+    </div>
+
+
+    <div class="register">
+
+        <div class="title">Информация за контакт</div>
+        <form action="/create/contacts" method="post" enctype="multipart/form-data">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="detail">Име</span>
+                    <input type="text" id="firstname" name="firstname">
+                </div>
+                <div class="input-box">
+                    <span class="detail">Фамилия</span>
+                    <input type="text" id="lastname" name="lastname">
+                </div>
+                <div class="input-box">
+                    <span class="detail">Адрес</span>
+                    <input type="text" id="address" name="address">
+                </div>
+                <div class="input-box">
+                    <span class="detail">Имейл</span>
+                    <input type="text" id="email" name="email">
+                </div>
+                <div class="input-box">
+                    <span class="detail">Телефонен номер</span>
+                    <input type="text" id="phone" name="phone">
+                </div>
+                <div class="upload_box">
+                    <span class="detail">Изберете снимка</span>
+                    <input type="file" name="uploaded_file">
+                </div>
+                <span id="message"></span>
+                <div class="button">
+                    <input type="submit" value="Завърши">
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+    <script type='text/javascript' src="./functions/check.js"></script>
+    <script type='text/javascript' src="./middleware/listContacts.js"></script>
+    <script type='text/javascript' src="./middleware/getReq.js"></script>
+    <script src="./middleware/patchReq.js"></script>
+    <script type='text/javascript' src="./middleware/deleteReq.js"></script>
+    <script type='text/javascript' src="./functions/numberControl.js"></script>
+    <script type='text/javascript' src="./functions/predictiveSearch.js"></script>
+    <script type='text/javascript' src="./functions/visualisation.js"></script>
+</body>
+</html> 
