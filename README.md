@@ -21,4 +21,4 @@ Toва е проект по предмет уеб технологии към Ф
 7. mocha, chai – автоматични тестове
 8. swagger – документация на проекта достъпва се на /api-docs
 
-![alt text](https://github.com/Daneto123/Phonebook/blob/main/webtech%20diagram.png)
+![alt text](https://github.com/Daneto123/PhoneBook/blob/main/webtech.drawio.png)
