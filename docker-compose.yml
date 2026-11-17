@@ -1,0 +1,21 @@
+# Указателят + MongoDB:  docker compose up -d   ->  http://localhost:3000
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      DBCONNECTION: mongodb://mongo:27017/phonebook
+    depends_on:
+      - mongo
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:7
+    volumes:
+      - mongo-data:/data/db
+    restart: unless-stopped
+
+volumes:
+  mongo-data:

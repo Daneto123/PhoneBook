@@ -1,37 +1,31 @@
 {
-  "name": "phone-book",
-  "version": "1.0.0",
-  "description": "phonebook project webtech team4",
-  "main": "index.js",
+  "name": "phonebook",
+  "version": "2.0.0",
+  "description": "Телефонен указател: Express + MongoDB (или локален файл), уеб интерфейс на български",
+  "main": "server/index.js",
   "scripts": {
-    "test": "mocha",
-    "dev": "./index.js"
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "keywords": [
-    "phone",
-    "book",
+    "phonebook",
     "express",
-    "html",
-    "css",
-    "javascript"
+    "mongodb"
   ],
-  "author": "deyvid viktor yordan",
+  "author": "Дейвид, Виктор и Йордан (Уеб технологии, ФМИ 2022)",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.0",
-    "chai": "^4.3.6",
-    "chai-http": "^4.3.0",
-    "dotenv": "^16.0.1",
-    "express": "^4.17.3",
-    "fs": "0.0.1-security",
-    "mocha": "^10.0.0",
-    "mongodb": "^4.6.0",
-    "mongoose": "^6.3.4",
-    "multer": "^1.4.4",
-    "nodemon": "^2.0.15",
-    "path": "^0.12.7",
-    "swagger-jsdoc": "^6.2.1",
-    "swagger-ui-express": "^4.4.0",
-    "uuid": "^8.3.2"
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "helmet": "^8.3.0",
+    "mongoose": "^8.24.10",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "supertest": "^7.3.2"
   }
 }
